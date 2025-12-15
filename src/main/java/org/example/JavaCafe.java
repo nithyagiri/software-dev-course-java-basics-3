@@ -19,17 +19,20 @@ public class JavaCafe {
             System.out.println("Welcome to Java Cafe!");
             System.out.println("1. View Food Menu");
             System.out.println("2. View Drink Menu");
-            System.out.println("3. View Current Order");
-            System.out.println("4. Exit");
+            System.out.println("3.View Dessert Menu");
+            System.out.println("4. View Current Order");
+            System.out.println("5. Exit");
 
             String choice = scanner.nextLine();
             if (choice.equals("1")) {
                 viewFoodMenu();
             } else if (choice.equals("2")) {
                 viewDrinkMenu();
-            } else if (choice.equals("3")) {
-                viewCurrentOrder();
+            }else if (choice.equals("3")) {
+                viewDessertMenu();
             } else if (choice.equals("4")) {
+                viewCurrentOrder();
+            } else if (choice.equals("5")) {
                 break;
             } else {
                 System.out.println("Invalid choice. Please try again.");
@@ -88,7 +91,28 @@ public class JavaCafe {
             }
         }
     }
+    public void viewDessertMenu() {
+        while(true) {
+            System.out.println("Dessert Menu");
+            System.out.println("1. Vanilla icecream");
+            System.out.println("2. chocolate icecream");
+            System.out.println("3. stawberry icecream");
+            System.out.println("4. Return to Main Menu");
 
+            String choice = scanner.nextLine();
+            if (choice.equals("1")) {
+                order.add("Vanilla Icecream");
+            } else if (choice.equals("2")) {
+                order.add("Chocolate Icecream");
+            } else if (choice.equals("3")) {
+                order.add("Strawberry Icecream");
+            } else if (choice.equals("4")) {
+                break;
+            } else {
+                System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
     /**
      * Displays the current order.
      */
